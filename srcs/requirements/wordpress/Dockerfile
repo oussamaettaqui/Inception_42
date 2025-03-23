@@ -2,6 +2,8 @@ FROM	debian:bullseye
 
 EXPOSE	9000
 
+
+
 ARG		PHPPATH=/etc/php/7.4/fpm
 
 RUN		apt update && apt install --no-install-recommends --no-install-suggests -y \
@@ -27,9 +29,9 @@ RUN		wget --no-check-certificate https://raw.githubusercontent.com/wp-cli/builds
 
 RUN		mkdir -p /run/php/ && \
 		mkdir -p /var/run/php/ && \
-		mkdir -p /var/www/inception/
+		mkdir -p /var/www/html/
 
-RUN		chown -R www-data:www-data /var/www/inception/
+RUN		chown -R www-data:www-data /var/www/html/
 
 COPY	conf/wp-config.php /tmp/
 

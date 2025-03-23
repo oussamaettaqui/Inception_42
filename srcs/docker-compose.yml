@@ -22,7 +22,7 @@ services:
     container_name: wordpress
     build: ./requirements/wordpress/
     volumes:
-      - wordpress:/var/www/inception/
+      - wordpress:/var/www/html/
     networks:
       - all
     init: true
@@ -54,7 +54,7 @@ services:
     ports:
       - '443:443'
     volumes:
-      - wordpress:/var/www/inception/
+      - wordpress:/var/www/html/
     networks:
       - all
     init: true
