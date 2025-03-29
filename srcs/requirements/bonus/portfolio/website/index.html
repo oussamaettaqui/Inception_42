@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oussama Ettaqui - Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "yPEfWU_KRa0oLZrbe",
+        });
+    })();
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">O<span>Ettaqui</span></div>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <div class="slider-icons">
+                                <span><i class="fas fa-sun"></i></span>
+                                <span><i class="fas fa-moon"></i></span>
+                            </div>
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider"></div>
+                        </label>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-greeting">Hello World, I'm</div>
+                <h1 class="hero-title">OUSSAMA <span>ETTAQUI</span></h1>
+                <div class="hero-profession">
+                    <span id="profession-text"></span><span class="cursor">|</span>
+                </div>
+                <p class="hero-subtitle">Full Stack Developer (Front & Back End) with DevOps Passion | I build responsive, user-friendly websites and applications with modern technologies</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/oussama-ettaqui/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/oussamaettaqui" class="social-icon"><i class="fab fa-github"></i></a>
+                    <!-- <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> -->
+                    <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skills-section">
+            <!-- <div class="skills-title">
+                <span>Technical Skills</span>
+            </div> -->
+            <div class="skills-container">
+                <div class="skills-track">
+                    <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-item"><i class="fab fa-react"></i> ReactJs</div>
+                    <div class="skill-item"><i class="fab fa-node-js"></i> NextJs</div>
+                    <div class="skill-item"><i class="fab fa-laravel"></i> Laravel</div>
+                    <div class="skill-item"><i class="fas fa-code"></i> C/C++</div>
+                    <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+                    <div class="skill-item"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+                    <div class="skill-item"><i class="fas fa-laptop-code"></i> Web Animation</div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-item"><i class="fab fa-react"></i> ReactJs</div>
+                    <div class="skill-item"><i class="fab fa-node-js"></i> NextJs</div>
+                    <div class="skill-item"><i class="fab fa-laravel"></i> Laravel</div>
+                    <div class="skill-item"><i class="fas fa-code"></i> C/C++</div>
+                    <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+                    <div class="skill-item"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+                    <div class="skill-item"><i class="fas fa-laptop-code"></i> Web Animation</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-bg">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm an enthusiastic full stack web developer with a passion for creating beautiful, functional, and user-friendly websites. I'm on an exciting journey of mastering the MERN stack (MongoDB, Express, React, Node.js) while also developing my DevOps expertise with tools like Docker and Kubernetes.</p>
+                    <p>My approach to design is minimalist yet impactful, focusing on clean aesthetics and intuitive user experiences. I believe that good design should be invisible, allowing the content to shine and users to accomplish their goals effortlessly.</p>
+                    <p>I'm constantly learning and expanding my skillset to stay at the forefront of web development trends and technologies, bringing fresh perspectives and a strong dedication to growth in both full stack development and DevOps practices.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">7+</div>
+                        <div class="stat-label">Personal Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Technologies Mastered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Commitment to Excellence</div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid" id="projectsGrid">
+                   
+                    
+            </div>
+                <!-- pagination section -->
+            <div class="pagination-controls">
+                <button id="prevPage" class="pagination-btn"><i class="fas fa-chevron-left"></i> Previous</button>
+                <div id="pageIndicator" class="page-indicator">Page 1 of 2</div>
+                <button id="nextPage" class="pagination-btn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>  
+        <!-- </div> -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>ossamaettaqui@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+212-615382629</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Ben Guerir, Morocco</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/oussama-ettaqui/" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/oussamaettaqui" class="social-circle"><i class="fab fa-github"></i></a>
+                        <!-- <a href="#" class="social-circle"><i class="fab fa-twitter"></i></a> -->
+                        <a href="#" class="social-circle"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                 <form class="contact-form" >
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your Message" id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit"  class="btn" onclick="sendMail()">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">O<span>Ettaqui</span></div>
+                <p>Creating beautiful digital experiences that make a difference.</p>
+                <ul class="footer-links">
+                    <li><a href="#hero" class="footer-link">Home</a></li>
+                    <li><a href="#about" class="footer-link">About</a></li>
+                    <li><a href="#projects" class="footer-link">Projects</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/oussama-ettaqui/" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/oussamaettaqui" class="footer-social-icon"><i class="fab fa-github"></i></a>
+                    <!-- <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a> -->
+                    <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 OUSSAMA ETTAQUI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
