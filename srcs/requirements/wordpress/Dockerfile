@@ -10,6 +10,7 @@ RUN		apt update && apt install --no-install-recommends --no-install-suggests -y 
 		ca-certificates \
 		php7.4-fpm \
 		php7.4-mysql \
+		php7.4-redis \
 		wget \
 		tar && \
 		rm -rf /var/lib/apt/lists/*

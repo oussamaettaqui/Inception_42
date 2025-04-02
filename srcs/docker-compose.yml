@@ -89,6 +89,37 @@ services:
     restart: on-failure
     depends_on:
       - mariadb
+  # Redis
+  redis:
+    container_name: redis
+    build:
+      context: ./requirements/bonus/Redis/
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+    networks:
+      - all
+    init: true
+    restart: on-failure
+  # cAdvisor
+  # cadvisor:
+  #   container_name: cadvisor
+  #   build:
+  #     context: ./requirements/bonus/cAdvisor/
+  #   volumes:
+  #     - /:/rootfs:ro
+  #     - /var/run:/var/run:ro
+  #     - /sys:/sys:ro
+  #     - /var/lib/docker/:/var/lib/docker:ro
+  #     - /dev/disk/:/dev/disk:ro
+  #   ports:
+  #     - "9090:9090"
+  #   networks:
+  #     - all
+  #   privileged: true
+  #   init: true
+  #   restart: on-failure
 # volumes --------------------------------------------------------------------
 
 # keeps the data shared between the containers
@@ -111,6 +142,13 @@ volumes:
       type: none
       o: bind
       device: ~/data/wordpress
+  # keeps the redis data
+  redis:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ~/data/redis
 
 # networks --------------------------------------------------------------------
 

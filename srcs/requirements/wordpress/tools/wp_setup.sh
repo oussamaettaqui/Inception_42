@@ -45,4 +45,13 @@ fi;
 
 wp --allow-root --path="/var/www/html/" theme install kubio --activate 
 
+
+# Install and activate Redis Object Cache plugin
+wp --allow-root --path="/var/www/html/" plugin install redis-cache --activate || true
+
+# Enable Redis object cache if plugin is active
+if wp --allow-root --path="/var/www/html/" plugin is-active redis-cache; then
+    wp --allow-root --path="/var/www/html/" redis enable || true
+fi
+
 exec $@

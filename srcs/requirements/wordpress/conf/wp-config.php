@@ -42,6 +42,16 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
+/* Redis configuration */
+define('WP_CACHE', true);
+define('WP_REDIS_HOST', 'redis');
+define('WP_REDIS_PORT', 6379);
+define('WP_REDIS_TIMEOUT', 1);
+define('WP_REDIS_READ_TIMEOUT', 1);
+define('WP_REDIS_DATABASE', 0);
+
+// -------
+
 define( 'AUTH_KEY',         '' );
 define( 'SECURE_AUTH_KEY',  '' );
 define( 'LOGGED_IN_KEY',    '' );
