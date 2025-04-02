@@ -55,7 +55,7 @@ fclean:clean
 	@echo "$(RED)Removing all docker images...$(RESET)"
 	@sudo rm -rf /home/oettaqui/data/wordpress
 	@sudo rm -rf /home/oettaqui/data/mariadb
-	@sudo rmi -rf ~/data/redis
+	@sudo rm -rf ~/data/redis
 	@docker system prune -fa
 	@docker volume prune -f
 	@echo "$(RED)All docker images removed!$(RESET)"
