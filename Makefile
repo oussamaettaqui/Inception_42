@@ -12,6 +12,7 @@ up:
 	@echo "$(GREEN)Starting the containers...$(RESET)"
 	@mkdir -p /home/oettaqui/data/wordpress
 	@mkdir -p /home/oettaqui/data/mariadb
+	@mkdir -p ~/data/redis
 	docker compose -f srcs/docker-compose.yml  up --build -d
 	@echo "$(LIGHT_GREEN)Containers started successfully!$(RESET)"
 
@@ -54,6 +55,7 @@ fclean:clean
 	@echo "$(RED)Removing all docker images...$(RESET)"
 	@sudo rm -rf /home/oettaqui/data/wordpress
 	@sudo rm -rf /home/oettaqui/data/mariadb
+	@sudo rmi -rf ~/data/redis
 	@docker system prune -fa
 	@docker volume prune -f
 	@echo "$(RED)All docker images removed!$(RESET)"
