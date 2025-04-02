@@ -102,6 +102,23 @@ services:
       - all
     init: true
     restart: on-failure
+
+  # FTP
+  ftp:
+    build: requirements/bonus/FTP/
+    container_name: ftp
+    image: ftp:tar
+    env_file:
+      - .env
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    volumes:
+      - wordpress:/var/www/html/
+    networks:
+      - all
+    restart: on-failure
+    
   # cAdvisor
   # cadvisor:
   #   container_name: cadvisor
