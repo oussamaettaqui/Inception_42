@@ -76,7 +76,7 @@ services:
       # - ./website:/app/website
     restart: on-failure
 
-  # Adminer
+  # # Adminer
   adminer:
     container_name: adminer
     build:
@@ -89,7 +89,7 @@ services:
     restart: on-failure
     depends_on:
       - mariadb
-  # Redis
+  # # Redis
   redis:
     container_name: redis
     build:
@@ -103,7 +103,7 @@ services:
     init: true
     restart: on-failure
 
-  # FTP
+  # # FTP
   ftp:
     build: requirements/bonus/FTP/
     container_name: ftp
@@ -119,24 +119,11 @@ services:
       - all
     restart: on-failure
     
-  # cAdvisor
-  # cadvisor:
-  #   container_name: cadvisor
-  #   build:
-  #     context: ./requirements/bonus/cAdvisor/
-  #   volumes:
-  #     - /:/rootfs:ro
-  #     - /var/run:/var/run:ro
-  #     - /sys:/sys:ro
-  #     - /var/lib/docker/:/var/lib/docker:ro
-  #     - /dev/disk/:/dev/disk:ro
-  #   ports:
-  #     - "9090:9090"
-  #   networks:
-  #     - all
-  #   privileged: true
-  #   init: true
-  #   restart: on-failure
+ 
+
+
+
+
 # volumes --------------------------------------------------------------------
 
 # keeps the data shared between the containers
@@ -166,6 +153,7 @@ volumes:
       type: none
       o: bind
       device: ~/data/redis
+
 
 # networks --------------------------------------------------------------------
 
