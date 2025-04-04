@@ -1,38 +1,39 @@
-FROM php:8.1-alpine
+FROM alpine:3.18
 
-# Install required PHP extensions
-RUN apk add --no-cache \
+# Install PHP and required extensions
+RUN apk update && apk add --no-cache \
+    php81 \
+    php81-fpm \
+    php81-gd \
+    php81-pdo \
+    php81-pdo_mysql \
+    php81-mysqli \
+    php81-session \
+    php81-json \
+    php81-openssl \
+    php81-mbstring \
+    php81-ctype \
+    wget \
     freetype \
     libpng \
-    libjpeg-turbo \
-    freetype-dev \
-    libpng-dev \
-    libjpeg-turbo-dev \
-    && docker-php-ext-configure gd \
-    --with-freetype \
-    --with-jpeg \
-    && docker-php-ext-install -j$(nproc) \
-    gd \
-    pdo \
-    pdo_mysql \
-    mysqli
+    libjpeg-turbo
+
+# Create necessary directories
+RUN mkdir -p /var/www/html
 
 # Download and install Adminer
-RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
-RUN wget -O adminer.php https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php
-RUN mv adminer.php index.php
-RUN chmod 644 index.php
+RUN wget -O index.php https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php && \
+    chmod 644 index.php
 
 # Setup PHP configuration
-RUN { \
-    echo 'upload_max_filesize = 64M'; \
-    echo 'post_max_size = 64M'; \
-    echo 'memory_limit = 128M'; \
-    } > /usr/local/etc/php/conf.d/custom.ini
+RUN mkdir -p /etc/php81/conf.d && \
+    echo 'upload_max_filesize = 64M' > /etc/php81/conf.d/custom.ini && \
+    echo 'post_max_size = 64M' >> /etc/php81/conf.d/custom.ini && \
+    echo 'memory_limit = 128M' >> /etc/php81/conf.d/custom.ini
 
 # Expose port 8080
 EXPOSE 8080
 
 # Start PHP built-in server
-CMD ["php", "-S", "0.0.0.0:8080", "-t", "/var/www/html"]
+CMD ["php81", "-S", "0.0.0.0:8080", "-t", "/var/www/html"]
