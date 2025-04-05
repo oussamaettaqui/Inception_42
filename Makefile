@@ -48,7 +48,6 @@ clean:
 	@docker compose -f srcs/docker-compose.yml down
 	@docker rmi -f `docker images -q`
 	@docker volume rm `docker volume ls -q`
-
 	@echo "$(RED)Containers cleaned successfully!$(RESET)"
 
 fclean:clean
