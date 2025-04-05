@@ -21,8 +21,8 @@ pasv_max_port=30009
 # User settings
 local_root=/var/www/html
 # Chroot users to prevent them accessing other parts of the filesystem
-chroot_local_user=YES
-allow_writeable_chroot=YES
+chroot_local_user=NO
+# allow_writeable_chroot=YES
 secure_chroot_dir=/var/run/vsftpd/empty
 # Additional security
 hide_ids=YES
@@ -32,6 +32,7 @@ EOF
 useradd -m ${FTP_USER}
 echo "${FTP_USER}:${FTP_PASS}" | chpasswd
 
+chown -R $FTP_USER:$FTP_USER /var/www/html
 # Create symbolic link from user's home to WordPress directory
 ln -s /var/www/html /home/${FTP_USER}/wordpress
 
