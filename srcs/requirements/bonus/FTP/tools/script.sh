@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Create required directories
+
 mkdir -p /var/run/vsftpd/empty
 
-# Configure vsftpd
+
 cat <<EOF > /etc/vsftpd.conf
 # Run in standalone mode
 listen=YES
@@ -28,13 +28,13 @@ secure_chroot_dir=/var/run/vsftpd/empty
 hide_ids=YES
 EOF
 
-# Create user and set password
+
 useradd -m ${FTP_USER}
 echo "${FTP_USER}:${FTP_PASS}" | chpasswd
 
 chown -R $FTP_USER:$FTP_USER /var/www/html
-# Create symbolic link from user's home to WordPress directory
+
 ln -s /var/www/html /home/${FTP_USER}/wordpress
 
-# Start vsftpd
+
 /usr/sbin/vsftpd /etc/vsftpd.conf
