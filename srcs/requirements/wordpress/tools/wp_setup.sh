@@ -1,18 +1,6 @@
 
 #!/bin/bash
 
-# this script run in the building container
-# it changes the ownership of the /var/www/inception/ folder to www-data user
-# then sure that the wp-config.php file is in the /var/www/inception/ folder
-# then it downloads the wordpress core files if they are not already there
-# then it installs wordpress if it is not already installed
-# and set the admin user and password if they are not already set
-# this variables are set in the .env file
-# the penultimate line download and activate the raft theme, that I liked most
-# at the end, exec $@ run the next CMD in the Dockerfile.
-# In this case: starts the php-fpm7.4 server in the foreground
-
-# set -ex # print commands & exit on error (debug mode)
 
 chown -R www-data:www-data /var/www/html/
 
@@ -46,10 +34,8 @@ fi;
 wp --allow-root --path="/var/www/html/" theme install kubio --activate 
 
 
-# Install and activate Redis Object Cache plugin
 wp --allow-root --path="/var/www/html/" plugin install redis-cache --activate || true
 
-# Enable Redis object cache if plugin is active
 if wp --allow-root --path="/var/www/html/" plugin is-active redis-cache; then
     wp --allow-root --path="/var/www/html/" redis enable || true
 fi

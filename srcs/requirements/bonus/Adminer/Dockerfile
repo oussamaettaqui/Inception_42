@@ -1,6 +1,5 @@
 FROM alpine:3.18
 
-# Install PHP and required extensions
 RUN apk update && apk add --no-cache \
     php81 \
     php81-fpm \
@@ -18,22 +17,21 @@ RUN apk update && apk add --no-cache \
     libpng \
     libjpeg-turbo
 
-# Create necessary directories
+
 RUN mkdir -p /var/www/html
 
-# Download and install Adminer
+
 WORKDIR /var/www/html
 RUN wget -O index.php https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php && \
     chmod 644 index.php
 
-# Setup PHP configuration
+
 RUN mkdir -p /etc/php81/conf.d && \
     echo 'upload_max_filesize = 64M' > /etc/php81/conf.d/custom.ini && \
     echo 'post_max_size = 64M' >> /etc/php81/conf.d/custom.ini && \
     echo 'memory_limit = 128M' >> /etc/php81/conf.d/custom.ini
 
-# Expose port 8080
+
 EXPOSE 8080
 
-# Start PHP built-in server
 CMD ["php81", "-S", "0.0.0.0:8080", "-t", "/var/www/html"]
